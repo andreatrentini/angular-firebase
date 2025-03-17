@@ -61,8 +61,8 @@ export class AuthService {
   }
 
   async saveUserData(user: UserData): Promise<void> {
-    const userRef = doc(this.firestore, `users/${user.uid}`);
-    await setDoc(userRef, {...user}, { merge: true });
+    const userDocRef = doc(this.firestore, `users/${user.uid}`);
+    await setDoc(userDocRef, {...user}, { merge: true });
   }
 
 }
